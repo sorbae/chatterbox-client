@@ -6,7 +6,6 @@ body {
 }
 
 #main, #chats {
-    width: 500px;
     margin: auto;
     text-align: left;
     background: white;
@@ -71,6 +70,10 @@ form input[type=text] {
 
 .chat:hover {
     background-color: #ddd;
+}
+
+.message {
+    margin: 25px;
 }
 
 .spinner {
