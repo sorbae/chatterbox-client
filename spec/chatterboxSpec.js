@@ -69,7 +69,7 @@ describe('chatterbox', function() {
 
     describe('chatroom behavior', function() {
       it('should be able to clear messages from the DOM', function() {
-        var orig = $('#chats').html('<blink>OMG IT\'s 1998!</blink>');
+        var orig = $('#chats').html('<div>OMG IT\'s 1998!</div>');
         app.clearMessages();
         expect($('#chats').children().length).to.equal(0);
       });
