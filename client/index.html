@@ -16,6 +16,7 @@
           newSearch += '&';
         }
         newSearch += 'username=' + (prompt('What is your name?') || 'anonymous');
+        newSearch += '&&roomname=' + (prompt('Do you want to create a new room?') || 'lobby');
         window.location.search = newSearch;
       }
     </script>
@@ -25,18 +26,27 @@
   </head>
   <body>
     <div id="main">
-      <h1>chatterbox</h1>
-      <div class="username"></div>
-      <div id="rooms">
-        Room:
-        <select id="roomSelect">
-        </select>
+      <div class="container header">
+        <h1>chatterbox</h1>
+        <div class="username"></div>
       </div>
-      <form action="#" id="send" method="post">
-        <input type="text" name="message" id="message"/>
-        <button type="button" name="submit" class="submit">Submit</button>
-      </form>
-      <div id="chats"></div>
+
+      <div class="container sidebar">
+        <div class="container" id="rooms">
+          <h3>Rooms:<h3>
+        </div>
+        <div class="container" id="friends">
+          <h3>Friends:<h3>
+        </div>
+      </div>
+
+      <div class="container body">
+        <form class="container form" action="#" id="send" method="post">
+          <input type="text" name="message" id="message"/>
+          <button type="button" name="submit" class="submit">Submit</button>
+        </form>
+        <div id="chats"></div>
+      </div>
     </div>
   </body>
 </html>

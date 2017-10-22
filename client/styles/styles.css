@@ -1,17 +1,43 @@
+* {
+    box-sizing: border-box;
+    color: lightgrey;
+}
+
 body {
-    background: #eee;
+    background: lavender;
     text-align: center;
-    padding: 0 25px;
-    font-family: arial, sans-serif;
+    padding: 25px;
+    font-family: Verdana, sans-serif;
+    color: SlateGray;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: auto 3fr;
+    grid-template-rows: auto 10fr;
+    grid-template-areas: 
+        "header header"
+        "roomselecter chatbox"
+}
+
+.container {
+    padding: 50px;
+    margin: 10px;
+}
+
+button {
+    color: black;
+}
+
+#chats {
+    overflow: auto;
 }
 
 #main, #chats {
     margin: auto;
     text-align: left;
-    background: white;
+    background: black;
     padding: 50px 60px;
-    border: solid #ddd;
-    border-width: 0 1px 1px 1px;
 }
 
 #main h1 {
@@ -30,8 +56,7 @@ body {
 }
 
 #main .error {
-    border: 1px solid red;
-    background: #FDEFF0;
+*/    background: #FDEFF0;
     padding: 20px;
 }
 
@@ -45,10 +70,31 @@ body {
     line-height: 13px;
 }
 
+#rooms {
+    grid-area: roomselecter;
+    font-style: bold;
+}
+
+.container.header {
+    grid-area: header;
+    border-bottom: 1px solid white;
+}
+
+.container.body {
+    overflow: auto;
+    grid-area: chatbox;
+    margin: 10px;
+}
+
+.container.sidebar {
+    border-right: 0.2px solid white;
+    border-right-width: 50%;
+    padding:10px;
+}
+
 form {
-    padding: 20px;
-    padding-left: 0;
-    margin-bottom: 20px;
+    width: 100%;
+    padding: 50px;
 }
 
 form input[type=text] {
@@ -56,6 +102,20 @@ form input[type=text] {
     width: 70%;
     font-size: 12px;
     padding: 5px;
+}
+
+a {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+}
+
+a:hover {
+    color: gray;
+}
+
+#friends div {
+    font-size: 14px;
 }
 
 .chat {
@@ -73,7 +133,10 @@ form input[type=text] {
 }
 
 .message {
-    margin: 25px;
+    overflow: hidden;
+    padding: 35px;
+    border: 0.5px solid gray;
+    font-size: 12px;
 }
 
 .spinner {
@@ -89,5 +152,14 @@ form input[type=text] {
 .friend {
     color: #fff;
     background-color: #0090da;
+}
+
+.hide {
+    display: none;
+}
+
+.bold {
+    font-style: bold;
+    font-size: 18px;
 }
 
